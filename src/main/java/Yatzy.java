@@ -1,18 +1,12 @@
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class Yatzy {
 
-    public static void main(String[] args) {
-        int tmp = yatzy(2);
-        System.out.println(tmp);
-    }
+    public static int chance(int[] valuesDices) {
 
-    public static int chance(int d1, int d2, int d3, int d4, int d5) {
-        int total = 0;
-        total += d1;
-        total += d2;
-        total += d3;
-        total += d4;
-        total += d5;
-        return total;
+        return Arrays.stream(valuesDices).reduce(Integer::sum).orElse(0);
+
     }
 
     public static int yatzy(int... dice) {
