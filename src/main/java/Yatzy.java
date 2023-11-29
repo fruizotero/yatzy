@@ -3,20 +3,23 @@ import java.util.stream.Stream;
 
 public class Yatzy {
 
+
     public static int chance(int[] valuesDices) {
 
         return Arrays.stream(valuesDices).reduce(Integer::sum).orElse(0);
 
     }
 
-    public static int yatzy(int... dice) {
-        int[] counts = new int[6];
-        for (int die : dice)
-            counts[die - 1]++;
-        for (int i = 0; i != 6; i++)
-            if (counts[i] == 5)
-                return 50;
-        return 0;
+    public static int yatzy(int[] dice) {
+
+        int firstDiceValue = dice[0];
+
+        for (int i = 1; i < dice.length; i++) {
+            if(firstDiceValue != dice[i]) return 0;
+        }
+
+        return 50;
+
     }
 
     public static int ones(int d1, int d2, int d3, int d4, int d5) {
