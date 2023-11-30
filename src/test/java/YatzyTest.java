@@ -25,7 +25,7 @@ public class YatzyTest {
     }
 
     @Test
-    public void test_1s() {
+    public void test_ones() {
         assertEquals(1, Yatzy.ones(new int[]{1, 2, 3, 4, 5}));
         assertEquals(2, Yatzy.ones(new int[]{1, 2, 1, 4, 5}));
         assertEquals(0, Yatzy.ones(new int[]{6, 2, 2, 4, 5}));
@@ -33,7 +33,7 @@ public class YatzyTest {
     }
 
     @Test
-    public void test_2s() {
+    public void test_twos() {
         assertEquals(4, Yatzy.twos(new int[]{1, 2, 3, 2, 6}));
         assertEquals(10, Yatzy.twos(new int[]{2, 2, 2, 2, 2}));
     }
@@ -45,21 +45,21 @@ public class YatzyTest {
     }
 
     @Test
-    public void fours_test() {
+    public void test_fours() {
         assertEquals(12, new Yatzy(new int[]{4, 4, 4, 5, 5}).fours());
         assertEquals(8, new Yatzy(new int[]{4, 4, 5, 5, 5}).fours());
         assertEquals(4, new Yatzy(new int[]{4, 5, 5, 5, 5}).fours());
     }
 
     @Test
-    public void fives() {
+    public void test_fives() {
         assertEquals(10, new Yatzy(new int[]{4, 4, 4, 5, 5}).fives());
         assertEquals(15, new Yatzy(new int[]{4, 4, 5, 5, 5}).fives());
         assertEquals(20, new Yatzy(new int[]{4, 5, 5, 5, 5}).fives());
     }
 
     @Test
-    public void sixes_test() {
+    public void test_sixes() {
         assertEquals(0, new Yatzy(new int[]{4, 4, 4, 5, 5}).sixes());
         assertEquals(6, new Yatzy(new int[]{4, 4, 6, 5, 5}).sixes());
         assertEquals(18, new Yatzy(new int[]{6, 5, 6, 6, 5}).sixes());
