@@ -1,9 +1,13 @@
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.stream.Stream;
 
 public class Yatzy {
 
+    protected int[] dice;
+
+    public Yatzy(int[] numbers) {
+        dice = numbers;
+    }
 
     public static int chance(int[] valuesDices) {
 
@@ -46,12 +50,6 @@ public class Yatzy {
         return sumEqualNumbers(numbers, 3);
     }
 
-    protected int[] dice;
-
-    public Yatzy(int[] numbers) {
-        dice = numbers;
-    }
-
     public int fours() {
 
         return sumEqualNumbers(dice, 4);
@@ -79,7 +77,6 @@ public class Yatzy {
 
         return mapValuesDices;
 
-
     }
 
     public static int scoreValueOfAKind(int[] dices, int amount) {
@@ -97,7 +94,7 @@ public class Yatzy {
         return scoreValueOfAKind(dices, 2);
     }
 
-    public static int two_pair(int[] dices) {
+    public static int score_two_pair(int[] dices) {
 
         int pairs = 0;
         int score = 0;
@@ -115,15 +112,16 @@ public class Yatzy {
 
     }
 
+    public static int three_of_a_kind(int[] dices) {
+
+        return scoreValueOfAKind(dices, 3);
+    }
+
     public static int four_of_a_kind(int[] dices) {
 
         return scoreValueOfAKind(dices, 4);
     }
 
-    public static int three_of_a_kind(int[] dices) {
-
-        return scoreValueOfAKind(dices, 3);
-    }
 
     public static int smallStraight(int[] dices) {
 

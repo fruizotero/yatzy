@@ -74,8 +74,8 @@ public class YatzyTest {
 
     @Test
     public void two_Pair() {
-        assertEquals(16, Yatzy.two_pair(new int[]{3, 3, 5, 4, 5}));
-        assertEquals(16, Yatzy.two_pair(new int[]{3, 3, 5, 5, 5}));
+        assertEquals(16, Yatzy.score_two_pair(new int[]{3, 3, 5, 4, 5}));
+        assertEquals(16, Yatzy.score_two_pair(new int[]{3, 3, 5, 5, 5}));
     }
 
     @Test
