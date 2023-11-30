@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.stream.Stream;
 
 public class Yatzy {
@@ -65,17 +66,30 @@ public class Yatzy {
         return sumEqualNumbers(dice, 6);
     }
 
-    public static int score_pair(int d1, int d2, int d3, int d4, int d5) {
-        int[] counts = new int[6];
-        counts[d1 - 1]++;
-        counts[d2 - 1]++;
-        counts[d3 - 1]++;
-        counts[d4 - 1]++;
-        counts[d5 - 1]++;
-        int at;
-        for (at = 0; at != 6; at++)
-            if (counts[6 - at - 1] >= 2)
-                return (6 - at) * 2;
+    public static HashMap<Integer, Integer> counterMatchingValuesDices(int[] dices) {
+
+        HashMap<Integer, Integer> mapValuesDices = new HashMap<>();
+        for (int valueDice = 1; valueDice <= 6; valueDice++) {
+            mapValuesDices.put(valueDice, 0);
+        }
+
+        for (int value : dices) {
+            mapValuesDices.put(value, mapValuesDices.get(value) + 1);
+        }
+
+        return mapValuesDices;
+
+
+    }
+
+    public static int score_pair(int[] dices) {
+
+        HashMap<Integer, Integer> counterMatchingDices = counterMatchingValuesDices(dices);
+
+        for (int valueDice = 6; valueDice >= 1; valueDice--) {
+            int valueMatchingDice = counterMatchingDices.get(valueDice);
+            if (valueMatchingDice >= 2) return valueDice * 2;
+        }
         return 0;
     }
 
