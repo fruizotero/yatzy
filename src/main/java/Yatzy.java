@@ -15,23 +15,24 @@ public class Yatzy {
         int firstDiceValue = dice[0];
 
         for (int i = 1; i < dice.length; i++) {
-            if(firstDiceValue != dice[i]) return 0;
+            if (firstDiceValue != dice[i]) return 0;
         }
 
         return 50;
 
     }
 
-    public static int ones(int d1, int d2, int d3, int d4, int d5) {
+    public static int sumEqualNumbers(int[] numbers, int numberToCheck) {
         int sum = 0;
-        if (d1 == 1) sum++;
-        if (d2 == 1) sum++;
-        if (d3 == 1) sum++;
-        if (d4 == 1) sum++;
-        if (d5 == 1)
-            sum++;
+        for (int number : numbers) {
+            sum += number == numberToCheck ? number : 0;
+        }
 
         return sum;
+    }
+
+    public static int ones(int[] numbers) {
+        return sumEqualNumbers(numbers, 1);
     }
 
     public static int twos(int d1, int d2, int d3, int d4, int d5) {
