@@ -34,14 +34,14 @@ public class YatzyTest {
 
     @Test
     public void test_2s() {
-        assertEquals(4, Yatzy.twos(1, 2, 3, 2, 6));
-        assertEquals(10, Yatzy.twos(2, 2, 2, 2, 2));
+        assertEquals(4, Yatzy.twos(new int[]{1, 2, 3, 2, 6}));
+        assertEquals(10, Yatzy.twos(new int[]{2, 2, 2, 2, 2}));
     }
 
     @Test
     public void test_threes() {
-        assertEquals(6, Yatzy.threes(1, 2, 3, 2, 3));
-        assertEquals(12, Yatzy.threes(2, 3, 3, 3, 3));
+        assertEquals(6, Yatzy.threes(new int[]{1, 2, 3, 2, 3}));
+        assertEquals(12, Yatzy.threes(new int[]{2, 3, 3, 3, 3}));
     }
 
     @Test
